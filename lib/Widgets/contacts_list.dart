@@ -15,26 +15,30 @@ class ContactsList extends StatelessWidget {
               child: ListView.builder(
                 itemCount: info.length,
                   itemBuilder: (context, index){
-                    return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: ListTile(
-                        title: Text(info[index]['name'].toString(),
-                            style: const TextStyle(fontSize: 19)),
-                        subtitle: Padding(
-                          padding: const EdgeInsets.only(top: 6),
-                          child: Text(info[index]['message'].toString(),
-                          style: const TextStyle(fontSize: 16),),
-                        ),
-                          leading: CircleAvatar(
-                            backgroundImage: NetworkImage(
-                              info[index]['profilePic'].toString()
-                            ),
+                    return InkWell(
+                      onTap: () {},
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: ListTile(
+                          title: Text(info[index]['name'].toString(),
+                              style: const TextStyle(fontSize: 19)),
+                          subtitle: Padding(
+                            padding: const EdgeInsets.only(top: 6),
+                            child: Text(info[index]['message'].toString(),
+                            style: const TextStyle(fontSize: 16),),
                           ),
+                            leading: CircleAvatar(
+                              backgroundImage: NetworkImage(
+                                info[index]['profilePic'].toString(),
+                              ),
+                              radius: 30,
+                            ),
 
-                          trailing: Text(
-                            info[index]['time'].toString(),
-                            style: const TextStyle(fontSize: 12,
-                            color: Colors.grey),),
+                            trailing: Text(
+                              info[index]['time'].toString(),
+                              style: const TextStyle(fontSize: 12,
+                              color: Colors.grey),),
+                        ),
                       ),
                     );
                   }),

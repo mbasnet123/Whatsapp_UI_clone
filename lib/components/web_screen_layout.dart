@@ -5,9 +5,17 @@ class WebScreenLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center
-        (child: Text('This is web')),
+    return Scaffold(
+      body: Row(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+            Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(image: AssetImage("assets/car1.png")),
+              ),
+            ),
+        ],
+      ),
     );
   }
 }
